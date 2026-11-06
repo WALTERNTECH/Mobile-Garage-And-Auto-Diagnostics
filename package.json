@@ -1,0 +1,13 @@
+{
+  "name": "mobile-garage-workspace",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "seed": "node scripts/seed.mjs",
+    "dev": "node scripts/dev.mjs"
+  },
+  "devDependencies": {
+    "pg": "^8.13.1",
+    "sharp": "^0.33.5"
+  }
+}
