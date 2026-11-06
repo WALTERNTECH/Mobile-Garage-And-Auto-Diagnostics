@@ -7,6 +7,7 @@
     "api/*.js": { "maxDuration": 15 }
   },
   "rewrites": [
+    { "source": "/", "destination": "/api/page" },
     { "source": "/services/:slug", "destination": "/api/page?service=:slug" },
     { "source": "/img/:id", "destination": "/api/img?id=:id" },
     { "source": "/sitemap.xml", "destination": "/api/sitemap" },

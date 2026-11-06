@@ -40,4 +40,4 @@ cd site && vercel deploy --prod --yes
 cd admin && vercel deploy --prod --yes
 ```
 
-Website pages are cached at the edge for about 45 seconds, so admin edits appear on the site within a minute.
+Website pages are cached at the edge for 20 seconds, so admin edits appear on the site within about half a minute.

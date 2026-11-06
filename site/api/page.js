@@ -3,7 +3,7 @@ import { renderHome, renderService, renderNotFound } from '../lib/render.js';
 import { fallback } from '../lib/defaults.js';
 import { originOf } from '../lib/http.js';
 
-// Every HTML page. Edge-cached briefly so admin edits show within about a minute.
+// Every HTML page. Edge-cached for 20 s so admin edits show within about half a minute.
 export default async function handler(req, res) {
   const origin = originOf(req);
   const path = String(req.query.path || '').replace(/^\/+|\/+$/g, '');
@@ -35,6 +35,6 @@ export default async function handler(req, res) {
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
   res.setHeader('Cache-Control', degraded || status !== 200
     ? 'public, max-age=0, s-maxage=10'
-    : 'public, max-age=0, s-maxage=45, stale-while-revalidate=86400');
+    : 'public, max-age=0, s-maxage=20, stale-while-revalidate=600');
   res.status(status).send(html);
 }
